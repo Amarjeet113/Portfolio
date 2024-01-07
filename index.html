@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amarjeet - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: rgb(3, 3, 72);
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+      #loader {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #090349;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+      }
+
+      .loader-icon {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #aaa;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s infinite linear;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Optional: Add some additional styling to the loader icon */
+      .loader-icon::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: #3498db;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+
+      .dark-mode {
+        background-color: #333;
+        color: white;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 80px;
+        background-color: rgb(1, 1, 54);
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        list-style: none;
+        margin: 0 24px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
+
+      nav ul li a:hover {
+        text-decoration: none;
+        color: rgb(41, 133, 219);
+        font-size: 1.1rem;
+      }
+
+      main hr {
+        border: 0;
+        background: #9c97f1;
+        height: 1.2px;
+        margin: 60px 84px;
+      }
+
+      .left {
+        font-size: 1.4rem;
+      }
+
+      .firstsection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 110px 0;
+      }
+
+      .firstsection div > {
+        width: 30%;
+      }
+
+      .leftsection {
+        font-size: 1.7rem;
+      }
+
+      .leftsection .btn {
+        padding: 4px;
+        background: #3791e6;
+        color: white;
+        border: 2px solid white;
+        border-radius: 6px;
+        font-size: 11px;
+        cursor: pointer;
+      }
+
+      .rightsection img {
+        height: 200px;
+        width: 300px;
+      }
+
+      .purple {
+        color: rgb(148, 47, 243);
+      }
+
+      .text-gray {
+        color: gray;
+      }
+
+      #element {
+        color: rgb(148, 47, 243);
+      }
+
+      .secondsection {
+        max-width: 40vw;
+        margin: 5ch;
+        height: 90vh;
+      }
+
+      .secondsection h1 {
+        font-size: 1.6rem;
+      }
+
+      .secondsection .box {
+        background: white;
+        width: 80vw;
+        height: 2px;
+        margin: 56px 0;
+        display: flex;
+      }
+
+      .secondsection .vertical {
+        height: 93px;
+        width: 1px;
+        background-color: white;
+        margin: 0 100px;
+      }
+
+      .image-top {
+        width: 53px;
+        position: relative;
+        top: -52px;
+        left: -9px;
+      }
+
+      .vertical-title {
+        position: relative;
+        top: 75px;
+        width: 150px;
+        font-size: 14px;
+      }
+
+      .vertical-title:hover {
+        text-decoration: none;
+        color: rgb(41, 219, 127);
+        font-size: 1.1rem;
+      }
+
+      .vertical-desc {
+        position: relative;
+        top: 26px;
+        color: gray;
+        width: 150px;
+        font-size: 9px;
+      }
+
+      footer {
+        background-color: #060427;
+      }
+
+      .footer {
+        display: flex;
+        padding: 33px 3px;
+        justify-content: space-evenly;
+      }
+
+      .footer ul {
+        list-style: none;
+      }
+
+      .footer > div {
+        width: 223px;
+      }
+
+      footer .footer-rights {
+        text-align: center;
+        color: gray;
+        padding: 12px 0;
+      }
+
+      @media screen and (max-width: 798px) {
+        body {
+          /* background-color: red;*/
+        }
+
+        .box {
+          flex-direction: column;
+        }
+
+        .secondsection .vertical {
+          height: unset;
+        }
+
+        .vertical-title,
+        .vertical-desc {
+          left: 45px;
+        }
+
+        .secondsection .box {
+          width: 50vw;
+        }
+
+        nav {
+          flex-direction: column;
+        }
+
+        .firstsection {
+          flex-direction: column-reverse;
+        }
+
+        .leftsection {
+          width: 100% !important;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .rightsection {
+          display: flex;
+          justify-content: center;
+        }
+
+        .secondsection {
+          max-width: 80vw;
+          margin: auto;
+          height: 171vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        body {
+          min-width: fit-content;
+        }
+
+        .image-top {
+          top: 112px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="loader"></div>
+    <div id="content">
+      <header>
+        <nav>
+          <div
+            class="left"
+            style="
+              background-image: url(portfoliobg.jpeg);
+              background-size: cover;
+              background-position: center;
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent;
+            "
+          >
+            Amarjeet Portfolio
+          </div>
+          <div class="right">
+            <ul>
+              <li>
+                <a href="./index.html" onclick="openPage('home')"
+                  ><img
+                    src="homeicon.png"
+                    alt=""
+                    height="15px"
+                    width="15px"
+                  />Home
+                </a>
+              </li>
+              <li>
+                <a href="./about.html" onclick="openPage('about')"
+                  ><img
+                    src="abouticon.png"
+                    alt=""
+                    height="15px"
+                    width="15px"
+                  />About</a
+                >
+              </li>
+              <li>
+                <a href="./skills.html" onclick="openPage('skills')"
+                  ><img
+                    src="skillsicon.png"
+                    alt=""
+                    height="12px"
+                    width="12px"
+                    style="background-color: rgb(212, 212, 235)"
+                  />Skills</a
+                >
+              </li>
+              <li>
+                <a href="./projects.html" onclick="openPage('project')"
+                  ><img
+                    src="projecticon.png"
+                    alt=""
+                    height="12px"
+                    width="12px"
+                    style="background-color: aliceblue"
+                  />Project</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <main>
+      <section class="firstsection">
+        <div class="leftsection">
+          Hi, My name is <span class="purple">Amarjeet</span>
+
+          <div>and I am a passionate</div>
+          <span id="element"></span>
+          <div class="buttons">
+            <button class="btn">
+              <a href="amarjeet resume.pdf" target="_blank">Download Resume</a>
+            </button>
+            <button
+              onclick="window.open('https://github.com/Amarjeet113', '_blank') "
+              class="btn"
+            >
+              Visit Github
+            </button>
+          </div>
+        </div>
+        <div class="rightsection">
+          <img src="bg.png" alt="" />
+        </div>
+      </section>
+      <hr />
+      <section class="secondsection">
+        <span class="text-gray"> What I have done so far</span>
+        <h1>Work Expereience</h1>
+
+        <div class="box">
+          <div class="vertical">
+            <img class="image-top" src="frontend.jpeg" alt="" />
+            <div class="vertical-title">
+              Frontend Developer (2022-ongoing)
+              <div class="vertical-desc">
+                The main responsibility of the Front-End Developer is the User
+                interface. Simply put, create things that the user sees
+              </div>
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="problem.jpeg" alt="" />
+            <div class="vertical-title">
+              Problem Solving (2023-ongoing)
+              <div class="vertical-desc">
+                It is the process of achieving a goal by overcoming obstacles, a
+                frequent part of most activities.
+              </div>
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="image-top" src="React-js-developers-.jpg" alt="" />
+            <div class="vertical-title">
+              React Js Developer (2023-ongoing)
+              <div class="vertical-desc">
+                ReactJS developers are front-end developers who build modern-day
+                UI components to improvise application performance.
+              </div>
+            </div>
+          </div>
+          <div class="vertical"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-rights" style="margin-left: 50vh">
+        Copyright &#169; amarjeetportfolio.com | All rights reserved
+        <a href="https://github.com/Amarjeet113" target="_blank"
+          ><img
+            src="githubicons.jpeg"
+            alt=""
+            height="10px"
+            width="10px"
+            style="padding-right: 16px"
+        /></a>
+
+        <a
+          href="https://www.linkedin.com/in/amarjeet-kumar-293252228/"
+          target="_blank"
+          ><img
+            src="linkedn icon.png"
+            alt=""
+            height="10px"
+            width="10px"
+            style="padding-right: 16px"
+        /></a>
+
+        <a href="mailto:amarjeet.kumar2021@vitbhopal.ac.in" target="_blank"
+          ><img
+            src="mailicon.jpeg"
+            alt=""
+            height="10px"
+            width="10px"
+            style="padding-right: 16px"
+        /></a>
+
+        <a href="https://leetcode.com/amar_jeet_113/" target="_blank"
+          ><img
+            src="LeetCode_logo.png"
+            alt=""
+            height="10px"
+            width="10px"
+            style="padding-right: 16px"
+        /></a>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Web Developer"],
+        typeSpeed: 50,
+      });
+    </script>
+    <script src="loader.js"></script>
+  </body>
+</html>
