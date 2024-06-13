@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
@@ -16,8 +19,6 @@
             font-family: 'Poppins', sans-serif;
         }
 
-
-
         .dark-mode {
             background-color: #333;
             color: white;
@@ -25,10 +26,11 @@
 
         nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             height: 80px;
             background-color: rgb(1, 1, 54);
+            padding: 0 20px;
         }
 
         nav ul {
@@ -38,16 +40,16 @@
 
         nav ul li {
             list-style: none;
-            margin: 0 24px;
+            margin: 0 12px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: white;
+            font-size: 1rem;
         }
 
         nav ul li a:hover {
-            text-decoration: none;
             color: rgb(49, 133, 219);
             font-size: 1.1rem;
         }
@@ -56,204 +58,140 @@
             border: 0;
             background: #9c97f1;
             height: 1.2px;
-            margin: 60px 84px;
-        }
-
-        .left {
-            font-size: 1.4rem;
+            margin: 40px 0;
         }
 
         .firstsection {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            margin: 110px 0;
-        }
-
-        .firstsection div> {
-            width: 30%;
+            flex-wrap: wrap;
+            padding: 20px;
         }
 
         .leftsection {
-            font-size: 1.7rem;
-
+            font-size: 1.4rem;
+            max-width: 600px;
         }
 
         .leftsection .btn {
-            padding: 4px;
+            padding: 8px 16px;
             background: #3791e6;
             color: white;
             border: 2px solid white;
             border-radius: 6px;
-            font-size: 11px;
+            font-size: 1rem;
             cursor: pointer;
+            margin-top: 10px;
         }
 
         .rightsection img {
-            height: 200px;
-            width: 300px;
-
+            height: auto;
+            max-width: 100%;
+            box-shadow: 10px 10px 20px black;
         }
 
         .purple {
             color: rgb(148, 47, 243);
         }
 
-        .text-gray {
-            color: gray;
-        }
-
-        #element {
-            color: rgb(148, 47, 243);
-        }
-
         .secondsection {
-            max-width: 40vw;
-            margin: 5ch;
-            height: 80vh;
+            max-width: 90vw;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .secondsection h1 {
-            font-size: 1.6rem;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        .secondsection .box {
-            background: white;
-            width: 80vw;
-            height: 2px;
-            margin: 56px 0;
+        .horizontal-boxes {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
         }
 
-        .secondsection .vertical {
-            height: 93px;
-            width: 1px;
-            background-color: white;
-            margin: 0 100px;
-
+        .box {
+            background-color: #1a3499;
+            border: 1px solid #796464;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            filter: drop-shadow(10px 10px 20px #096495);
+            text-align: center;
         }
 
-        .image-top {
-            width: 53px;
-            position: relative;
-            top: -52px;
-            left: -9px;
+        .box h3 {
+            color: rgb(12, 179, 240);
+            margin-bottom: 10px;
         }
 
-        .vertical-title {
-            position: relative;
-            top: 75px;
-            width: 150px;
-            font-size: 14px;
-        }
-
-        .vertical-title:hover {
-            text-decoration: none;
-            color: rgb(41, 219, 127);
-            font-size: 1.1rem;
-        }
-
-        .vertical-desc {
-            position: relative;
-            top: 26px;
-            color: gray;
-            width: 150px;
-            font-size: 9px;
+        .box p {
+            color: #d4cdcd;
+            margin: 5px 0;
         }
 
         footer {
             background-color: #060427;
-
-        }
-
-        .footer {
-            display: flex;
-            padding: 33px 3px;
-            justify-content: space-evenly;
-        }
-
-        .footer ul {
-            list-style: none;
-        }
-
-        .footer>div {
-            width: 223px;
-        }
-
-        footer .footer-rights {
+            padding: 20px;
             text-align: center;
+        }
+
+        .footer-rights {
             color: gray;
-            padding: 12px 0;
+        }
+
+        .footer-rights a img {
+            height: 20px;
+            width: 20px;
+            margin: 0 8px;
         }
 
         @media screen and (max-width: 798px) {
-            body {
-                /* background-color: red;*/
-
-            }
-
-            .box {
-                flex-direction: column;
-            }
-
-            .secondsection .vertical {
-                height: unset;
-            }
-
-            .vertical-title,
-            .vertical-desc {
-                left: 45px;
-            }
-
-            .secondsection .box {
-                width: 50vw;
-            }
-
             nav {
                 flex-direction: column;
+                height: auto;
+                padding: 10px;
             }
 
-
-
-
+            nav ul {
+                flex-direction: column;
+            }
 
             .firstsection {
-                flex-direction: column-reverse;
+                flex-direction: column;
             }
 
             .leftsection {
-                width: 100% !important;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .rightsection {
-                display: flex;
-                justify-content: center;
-
+                text-align: center;
+                margin-bottom: 20px;
             }
 
             .secondsection {
-                max-width: 80vw;
-                margin: auto;
-                height: 161vh;
-                display: flex;
+                padding: 10px;
+            }
+
+            .horizontal-boxes {
                 flex-direction: column;
                 align-items: center;
             }
 
-            body {
-                min-width: fit-content;
+            .box {
+                width: 100%;
+                max-width: 300px;
             }
 
-            .image-top {
-                top: 112px;
+            footer {
+                font-size: 0.9rem;
             }
-            
-           
-            
+
+            .footer-rights a img {
+                height: 15px;
+                width: 15px;
+            }
         }
     </style>
 </head>
@@ -261,153 +199,80 @@
 <body>
     <header>
         <nav>
-            <div class="left"
-                style="background-image: url(portfoliobg.jpeg); background-size: cover; background-position: center ; background-clip: text; -webkit-background-clip: text; color:transparent">
-                Amarjeet Portfolio</div>
+            <div class="left" style="background-image: url(portfoliobg.jpeg); background-size: cover; background-position: center; background-clip: text; -webkit-background-clip: text; color: transparent">
+                Amarjeet Portfolio
+            </div>
             <div class="right">
                 <ul>
-                    <li><a href="./index.html" onclick="openPage('home')"><img src="homeicon.png" alt="" height="15px"
-                                width="15px">Home </a></li>
-                    <li><a href="./about.html" onclick="openPage('about')"><img src="abouticon.png" alt="" height="15px"
-                                width="15px">About</a></li>
-                    <li><a href="./skills.html" onclick="openPage('skills')"><img src="skillsicon.png" alt=""
-                                height="12px" width="12px" style="background-color: rgb(212, 212, 235);">Skills</a></li>
-                    <li><a href="./projects.html" onclick="openPage('project')"><img src="projecticon.png" alt=""
-                                height="12px" width="12px" style="background-color: aliceblue;">Project</a></li>
+                    <li><a href="./index.html"><img src="homeicon.png" alt="" height="15px" width="15px"> Home </a></li>
+                    <li><a href="./about.html"><img src="abouticon.png" alt="" height="15px" width="15px"> About</a></li>
+                    <li><a href="./skills.html"><img src="skillsicon.png" alt="" height="12px" width="12px" style="background-color: rgb(212, 212, 235);"> Skills</a></li>
+                    <li><a href="./projects.html"><img src="projecticon.png" alt="" height="12px" width="12px" style="background-color: aliceblue;"> Project</a></li>
                 </ul>
+            </div>
         </nav>
     </header>
     <div class="container">
-        <div class="row" style="justify-content: center; padding: 10px;">
-            <div class="col-md-7"
-                style="justify-content: center; padding-top: 30px; padding-bottom: 50px; margin-left: 120px;">
-                <h1 style="font-size: 1.5em; padding-bottom: 20px;">
-                    About
-                    <strong class="purple">Me</strong>
-                </h1>
-                <div class="quote-card-view card">
-                    <div class="card-body" style="margin-left: -90px; margin-right: 100vh;">
-                        <blockquote class="blockquote mb-0">
-                            <p style="text-align: justify;">
-                                Hello I'm
-                                <span class="purple"> Amarjeet Kumar</span>
-                                , passionate pre-final year graduate with a
-                                <span class="purple">fervor</span>
-                                for assimilating cutting-edge engineering technologies, poised to catalyze positive
-                                change and contribute to shaping a brighter future.
-                                <br>
-                                <br>
-                                Expereienced in
-                                <span class="purple">tackling</span>
-                                challenges with a keen analytical mind, I excel in crafting seamless solutions for both
-                                <span class="purple">front-end</span>
-                                &
-                                <span class="purple">back-end</span>
-                                development, leveraging a range of cutting-edge technologies.
-                            </p>
-                        </blockquote>
-
-                    </div>
-
-                </div>
-                <div class="rightsection; " style="padding-left: 110vh; margin-top: -150px;">
-                    <img src="aboutdeveloper.png" alt="" style="box-shadow: 10px 10px 20px black; max-width: 80vh; height: auto; ">
-                </div>
-                <h1 class="project-heading" style="padding-bottom: 20px; margin-left: 45vh; font-size: 7vh;">
-                    <strong class="purple">Education</strong>
-                </h1>
-                <div class="horizontal-boxes" style=" display: flex; gap: 10px;">
-                    <div class="box" style=" background-color: #1a3499;  margin-left:-50px;
-                    border: 1px solid #796464;
-                    padding: 10px;
-                    border-radius: 5px;
-                    width: 200px; filter: drop-shadow(10px 10px 20px #096495);">
-                     <h3 style="color:rgb(12, 179, 240);">Matriculation</h3>
-                     <p style="color: #d4cdcd;"><strong>School :</strong> Devasthaly Vidyapeeth</p>
-                     <p style="color: #d3cccc;"><strong>Passing Year :</strong> 2019</p>
-                     <p style="color: #d0c9c9;"><strong>Percentage :</strong> 77.8%</p>
-                    </div>
-
-                    <div class="box" style=" background-color: #1a3499;  margin-left:10px;
-                    border: 1px solid #796464;
-                    padding: 10px;
-                    border-radius: 5px;
-                    width: 200px; filter: drop-shadow(10px 10px 20px #096495);">
-                     <h3 style="color:rgb(12, 179, 240);">Intermediate</h3>
-                     <p style="color: #d4cdcd;"><strong>School :</strong> Devasthaly Vidyapeeth</p>
-                     <p style="color: #d3cccc;"><strong>Passing Year :</strong> 2021</p>
-                     <p style="color: #d0c9c9;"><strong>Percentage :</strong> 75.4%</p>
-                    </div>
-
-                    <div class="box" style=" background-color: #1a3499;  margin-left:10px;
-                    border: 1px solid #796464;
-                    padding: 10px;
-                    border-radius: 5px;
-                    width: 200px; filter: drop-shadow(10px 10px 20px #096495);">
-                     <h3 style="color:rgb(12, 179, 240);">Graduation</h3>
-                     <p style="color: #d4cdcd;"><strong>University :</strong> Vellore Institute of Technology</p>
-                     <p style="color: #d3cccc;"><strong> Year :</strong> 2021-2025</p>
-                     <p style="color: #d0c9c9;"><strong>CGPA :</strong> 8.18</p>
-                    </div>
-                    </div>
-                <h1 class="project-heading" style="padding-bottom: 20px;margin-top: 15vh; margin-left: 45vh; font-size: 7vh;">
-                    <strong class="purple">Experience</strong>
-                </h1>   
-
-                <div class="box" style=" background-color: #1a3499;  margin-left:-30px; 
-                    border: 1px solid #796464;
-                    padding: 35px;
-                    border-radius: 5px;
-                    width: 150vh; filter: drop-shadow(10px 10px 20px #096495); ">
-                    <div style="margin-bottom: 12PX; font-size: large;">
-                        <strong class="purple">ETHNUS</strong>
-                        (MERN Full Stack Internship Program), Aug 2023 to Nov 2023
-                    </div>
-                    <div style="margin-bottom: 8px; font-size: .8rem;">
-                        <strong class="purple">-</strong>
-                        Developed Art Gallery, a full-stack application using MERN stack (ReactJS, ExpressJS, NodeJS, MongoDB).
-                    </div>
-                    <div style="margin-bottom: 8px; font-size: .8rem;">
-                        <strong class="purple">-</strong>
-                        Gained hands-on experience and strengthened project planning, problem-solving, and teamwork skills.
-                    </div>
-                    <div style="margin-bottom: 8px; font-size: .8rem;">
-                        <strong class="purple">-</strong>
-                        Contributed to a scalable and functional application, including user authentication, responsive UI, and specific functionalities.
-                    </div>
-
-
-                     
-                </div>
-                </div>    
-                
-                
+        <div class="firstsection">
+            <div class="leftsection">
+                <h1>About <strong class="purple">Me</strong></h1>
+                <p>
+                    Hello, I'm <span class="purple">Amarjeet Kumar</span>, a passionate pre-final year graduate with a <span class="purple">fervor</span> for assimilating cutting-edge engineering technologies, poised to catalyze positive change and contribute to shaping a brighter future.
+                </p>
+                <p>
+                    Experienced in <span class="purple">tackling</span> challenges with a keen analytical mind, I excel in crafting seamless solutions for both <span class="purple">front-end</span> & <span class="purple">back-end</span> development, leveraging a range of cutting-edge technologies.
+                </p>
+                <button class="btn">Contact Me</button>
             </div>
-
+            <div class="rightsection">
+                <img src="aboutdeveloper.png" alt="About Developer">
+            </div>
         </div>
-
+        <main>
+            <hr>
+        </main>
+        <div class="secondsection">
+            <h1 class="project-heading"><strong class="purple">Education</strong></h1>
+            <div class="horizontal-boxes">
+                <div class="box">
+                    <h3>Matriculation</h3>
+                    <p><strong>School:</strong> Devasthaly Vidyapeeth</p>
+                    <p><strong>Passing Year:</strong> 2019</p>
+                    <p><strong>Percentage:</strong> 77.8%</p>
+                </div>
+                <div class="box">
+                    <h3>Intermediate</h3>
+                    <p><strong>School:</strong> Devasthaly Vidyapeeth</p>
+                    <p><strong>Passing Year:</strong> 2021</p>
+                    <p><strong>Percentage:</strong> 75.4%</p>
+                </div>
+                <div class="box">
+                    <h3>Graduation</h3>
+                    <p><strong>University:</strong> Vellore Institute of Technology</p>
+                    <p><strong>Year:</strong> 2021-2025</p>
+                    <p><strong>CGPA:</strong> 8.18</p>
+                </div>
+            </div>
+            <h1 class="project-heading"><strong class="purple">Experience</strong></h1>
+            <div class="box">
+                <p><strong class="purple">ETHNUS</strong> (MERN Full Stack Internship Program), Aug 2023 to Nov 2023</p>
+                <ul>
+                    <li>Developed Art Gallery, a full-stack application using MERN stack (ReactJS, ExpressJS, NodeJS, MongoDB).</li>
+                    <li>Gained hands-on experience and strengthened project planning, problem-solving, and teamwork skills.</li>
+                    <li>Contributed to a scalable and functional application, including user authentication, responsive UI, and specific functionalities.</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <footer>
-        <div class="footer-rights" style="margin-left: 10vh;">
+        <div class="footer-rights">
             Copyright &#169; amarjeetportfolio.com | All rights reserved
-            <a href="https://github.com/Amarjeet113" target="_blank"><img src="githubicons.jpeg" alt="" height="10px"
-                    width="10px" style="padding-right: 16px;"></a>
-
-
-            <a href="https://www.linkedin.com/in/amarjeet-kumar-293252228/" target="_blank"><img src="linkedn icon.png"
-                    alt="" height="10px" width="10px" style="padding-right: 16px;"></a>
-
-
-            <a href="mailto:amarjeet.kumar2021@vitbhopal.ac.in" target="_blank"><img src="mailicon.jpeg" alt=""
-                    height="10px" width="10px" style="padding-right: 16px;"></a>
-
-
-            <a href="https://leetcode.com/Amarjeet113/" target="_blank"><img src="LeetCode_logo.png" alt=""
-                    height="10px" width="10px" style="padding-right: 16px;"></a>
+            <a href="https://github.com/Amarjeet113" target="_blank"><img src="githubicons.jpeg" alt=""></a>
+            <a href="https://www.linkedin.com/in/amarjeet-kumar-293252228/" target="_blank"><img src="linkedn icon.png" alt=""></a>
+            <a href="mailto:amarjeet.kumar2021@vitbhopal.ac.in" target="_blank"><img src="mailicon.jpeg" alt=""></a>
+            <a href="https://leetcode.com/Amarjeet113/" target="_blank"><img src="LeetCode_logo.png" alt=""></a>
         </div>
     </footer>
-
-
 </body>
 
 </html>
