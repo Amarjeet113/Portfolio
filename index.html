@@ -14,13 +14,16 @@
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
 
       body {
         background-color: rgb(3, 3, 72);
         color: white;
         font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
       }
+
       #loader {
         width: 100%;
         height: 100vh;
@@ -52,27 +55,12 @@
         }
       }
 
-      /* Optional: Add some additional styling to the loader icon */
-      .loader-icon::after {
-        content: "";
-        display: block;
-        width: 20px;
-        height: 20px;
-        background-color: #3498db;
-        border-radius: 50%;
-        margin: 0 auto;
-      }
-
-      .dark-mode {
-        background-color: #333;
-        color: white;
-      }
-
       nav {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         height: 80px;
+        padding: 0 20px;
         background-color: rgb(1, 1, 54);
       }
 
@@ -83,7 +71,7 @@
 
       nav ul li {
         list-style: none;
-        margin: 0 24px;
+        margin: 0 12px;
       }
 
       nav ul li a {
@@ -92,7 +80,6 @@
       }
 
       nav ul li a:hover {
-        text-decoration: none;
         color: rgb(41, 133, 219);
         font-size: 1.1rem;
       }
@@ -104,38 +91,34 @@
         margin: 60px 84px;
       }
 
-      .left {
-        font-size: 1.4rem;
-      }
-
       .firstsection {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin: 110px 0;
-      }
-
-      .firstsection div > {
-        width: 30%;
+        margin: 60px 20px;
       }
 
       .leftsection {
         font-size: 1.7rem;
+        text-align: center;
       }
 
       .leftsection .btn {
-        padding: 4px;
+        padding: 8px 16px;
         background: #3791e6;
         color: white;
         border: 2px solid white;
         border-radius: 6px;
-        font-size: 11px;
+        font-size: 14px;
         cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin: 10px 5px;
       }
 
       .rightsection img {
-        height: 200px;
-        width: 300px;
+        max-width: 100%;
+        height: auto;
       }
 
       .purple {
@@ -146,61 +129,55 @@
         color: gray;
       }
 
-      #element {
-        color: rgb(148, 47, 243);
-      }
-
       .secondsection {
-        max-width: 40vw;
-        margin: 5ch;
-        height: 90vh;
+        max-width: 80vw;
+        margin: 5ch auto;
+        height: auto;
       }
 
       .secondsection h1 {
         font-size: 1.6rem;
+        text-align: center;
       }
 
-      .secondsection .box {
+      .box {
         background: white;
-        width: 80vw;
+        width: 100%;
         height: 2px;
         margin: 56px 0;
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
       }
 
-      .secondsection .vertical {
-        height: 93px;
+      .vertical {
+        height: auto;
         width: 1px;
         background-color: white;
-        margin: 0 100px;
+        margin: 20px 0;
       }
 
       .image-top {
         width: 53px;
-        position: relative;
-        top: -52px;
-        left: -9px;
+        margin-bottom: -20px;
       }
 
       .vertical-title {
-        position: relative;
-        top: 75px;
         width: 150px;
         font-size: 14px;
+        text-align: center;
       }
 
       .vertical-title:hover {
-        text-decoration: none;
         color: rgb(41, 219, 127);
         font-size: 1.1rem;
       }
 
       .vertical-desc {
-        position: relative;
-        top: 26px;
         color: gray;
         width: 150px;
         font-size: 9px;
+        text-align: center;
       }
 
       footer {
@@ -209,56 +186,79 @@
 
       .footer {
         display: flex;
-        padding: 33px 3px;
-        justify-content: space-evenly;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px 5px;
+        text-align: center;
       }
 
       .footer ul {
         list-style: none;
+        padding: 0;
       }
 
       .footer > div {
-        width: 223px;
+        width: 100%;
       }
 
-      footer .footer-rights {
-        text-align: center;
+      .footer-rights {
         color: gray;
         padding: 12px 0;
       }
 
-      @media screen and (max-width: 498px) {
-        body {
-          /* background-color: red;*/
+      .footer-rights img {
+        margin: 0 8px;
+        vertical-align: middle;
+      }
+
+      @media screen and (max-width: 768px) {
+        .firstsection {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .leftsection {
+          font-size: 1.2rem;
+        }
+
+        .leftsection .btn {
+          font-size: 12px;
+        }
+
+        .secondsection {
+          width: 90%;
         }
 
         .box {
+          width: 100%;
           flex-direction: column;
-        }
-
-        .secondsection .vertical {
-          height: unset;
+          align-items: center;
         }
 
         .vertical-title,
         .vertical-desc {
-          left: 45px;
+          text-align: center;
+          width: 80%;
         }
 
-        .secondsection .box {
-          width: 50vw;
+        .vertical {
+          height: 1px;
+          width: 80%;
+          margin: 20px 0;
         }
+      }
 
-        nav {
+      @media screen and (max-width: 498px) {
+        nav ul {
           flex-direction: column;
         }
 
-        .firstsection {
-          flex-direction: column-reverse;
+        nav ul li {
+          margin: 10px 0;
         }
 
         .leftsection {
-          width: 100% !important;
+          width: 100%;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -268,31 +268,35 @@
         .rightsection {
           display: flex;
           justify-content: center;
+          margin-top: 20px;
         }
 
         .secondsection {
-          max-width: 80vw;
-          margin: auto;
-          height: 171vh;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        body {
-          min-width: fit-content;
+          width: 100%;
+          height: auto;
         }
 
         .image-top {
-          top: 112px;
+          margin: 20px auto;
+        }
+
+        .vertical-title,
+        .vertical-desc {
+          text-align: center;
+        }
+
+        footer {
+          padding: 10px 5px;
         }
       }
     </style>
   </head>
 
   <body>
-    <div id="loader"></div>
-    <div id="content">
+    <div id="loader">
+      <div class="loader-icon"></div>
+    </div>
+    <div id="content" style="display: none;">
       <header>
         <nav>
           <div
@@ -314,7 +318,7 @@
                 <a href="./index.html" onclick="openPage('home')"
                   ><img
                     src="homeicon.png"
-                    alt=""
+                    alt="Home Icon"
                     height="15px"
                     width="15px"
                   />Home
@@ -324,7 +328,7 @@
                 <a href="./about.html" onclick="openPage('about')"
                   ><img
                     src="abouticon.png"
-                    alt=""
+                    alt="About Icon"
                     height="15px"
                     width="15px"
                   />About</a
@@ -334,7 +338,7 @@
                 <a href="./skills.html" onclick="openPage('skills')"
                   ><img
                     src="skillsicon.png"
-                    alt=""
+                    alt="Skills Icon"
                     height="12px"
                     width="12px"
                     style="background-color: rgb(212, 212, 235)"
@@ -345,7 +349,7 @@
                 <a href="./projects.html" onclick="openPage('project')"
                   ><img
                     src="projecticon.png"
-                    alt=""
+                    alt="Project Icon"
                     height="12px"
                     width="12px"
                     style="background-color: aliceblue"
@@ -362,44 +366,42 @@
       <section class="firstsection">
         <div class="leftsection">
           Hi, My name is <span class="purple">Amarjeet</span>
-
           <div>and I am a passionate</div>
           <span id="element"></span>
           <div class="buttons">
-            <button class="btn">
-              <a href="amarjeet.resume.pdf" target="_blank">Download Resume</a>
-            </button>
-            
-            <button
-              onclick="window.open('https://github.com/Amarjeet113', '_blank') "
-              class="btn"
+            <a href="amarjeet.resume.pdf" target="_blank" class="btn"
+              >Download Resume</a
             >
-              Visit Github
-            </button>
+            <a
+              href="https://github.com/Amarjeet113"
+              target="_blank"
+              class="btn"
+              >Visit Github</a
+            >
           </div>
         </div>
         <div class="rightsection">
-          <img src="bg.png" alt="" />
+          <img src="bg.png" alt="Amarjeet's Photo" />
         </div>
       </section>
       <hr />
       <section class="secondsection">
         <span class="text-gray"> What I have done so far</span>
-        <h1>Work Expereience</h1>
+        <h1>Work Experience</h1>
 
         <div class="box">
           <div class="vertical">
-            <img class="image-top" src="frontend.jpeg" alt="" />
+            <img class="image-top" src="frontend.jpeg" alt="Frontend Developer" />
             <div class="vertical-title">
               Frontend Developer (2022-ongoing)
               <div class="vertical-desc">
                 The main responsibility of the Front-End Developer is the User
-                interface. Simply put, create things that the user sees
+                interface. Simply put, create things that the user sees.
               </div>
             </div>
           </div>
           <div class="vertical">
-            <img class="image-top" src="problem.jpeg" alt="" />
+            <img class="image-top" src="problem.jpeg" alt="Problem Solving" />
             <div class="vertical-title">
               Problem Solving (2023-ongoing)
               <div class="vertical-desc">
@@ -409,7 +411,11 @@
             </div>
           </div>
           <div class="vertical">
-            <img class="image-top" src="React-js-developers-.jpg" alt="" />
+            <img
+              class="image-top"
+              src="React-js-developers-.jpg"
+              alt="React Js Developer"
+            />
             <div class="vertical-title">
               React Js Developer (2023-ongoing)
               <div class="vertical-desc">
@@ -423,54 +429,37 @@
       </section>
     </main>
     <footer>
-      <div class="footer-rights" style="margin-left: 50vh">
+      <div class="footer-rights">
         Copyright &#169; amarjeetportfolio.com | All rights reserved
-        <a href="https://github.com/Amarjeet113" target="_blank"
-          ><img
-            src="githubicons.jpeg"
-            alt=""
-            height="10px"
-            width="10px"
-            style="padding-right: 16px"
+        <a href="https://github.com/Amarjeet113" target="_blank">
+          <img src="githubicons.jpeg" alt="GitHub Icon" height="10px" width="10px"
         /></a>
-
-        <a
-          href="https://www.linkedin.com/in/amarjeet-kumar-293252228/"
-          target="_blank"
-          ><img
-            src="linkedn icon.png"
-            alt=""
-            height="10px"
-            width="10px"
-            style="padding-right: 16px"
+        <a href="https://www.linkedin.com/in/amarjeet-kumar-293252228/" target="_blank">
+          <img src="linkedn icon.png" alt="LinkedIn Icon" height="10px" width="10px"
         /></a>
-
-        <a href="mailto:amarjeet.kumar2021@vitbhopal.ac.in" target="_blank"
-          ><img
-            src="mailicon.jpeg"
-            alt=""
-            height="10px"
-            width="10px"
-            style="padding-right: 16px"
+        <a href="mailto:amarjeet.kumar2021@vitbhopal.ac.in" target="_blank">
+          <img src="mailicon.jpeg" alt="Mail Icon" height="10px" width="10px"
         /></a>
-
-        <a href="https://leetcode.com/Amarjeet113/" target="_blank"
-          ><img
-            src="LeetCode_logo.png"
-            alt=""
-            height="10px"
-            width="10px"
-            style="padding-right: 16px"
+        <a href="https://leetcode.com/Amarjeet113/" target="_blank">
+          <img src="LeetCode_logo.png" alt="LeetCode Icon" height="10px" width="10px"
         /></a>
       </div>
     </footer>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
       var typed = new Typed("#element", {
-        strings: ["Web Developer"],
+        strings: ["Web Developer", "React Developer", "Problem Solver"],
         typeSpeed: 50,
+        backSpeed: 25,
+        loop: true
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() => {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("content").style.display = "block";
+        }, 2000); // Adjust the timeout as needed
       });
     </script>
-    <script src="loader.js"></script>
   </body>
 </html>
